@@ -3,7 +3,7 @@ pipeline {
     tools {
         maven 'localMAVEN'
     }
-    stages{
+stages{
         stage('Build'){
             steps {
                 sh 'mvn clean package'
@@ -19,5 +19,6 @@ pipeline {
             steps {
                 build job: 'Deploy-to-staging'
             }
+        }
     }
 }
